@@ -1,9 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Routes } from './src/routes';
+import React from "react";
+import {Routes} from "./src/routes";
+import { Provider as PaperProvider} from 'react-native-paper';
+import { AuthProvider } from "./src/hook/auth";
 
-export default function App() {
+
+const App = () => {
   return (
-    < Routes/>
+      <PaperProvider>
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
+      </PaperProvider>
+    
   );
 };
+
+export default App;
